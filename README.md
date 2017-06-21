@@ -4,12 +4,12 @@ A small PHP class implementing Format Preserving Encryption via Feistel Network.
 
 ## 1. Installation
 
-You can install Cryptomute via [Composer](http://getcomposer.org) (packagist has [loostro/cryptomute](https://packagist.org/packages/loostro/cryptomute) package). In your `composer.json` file use:
+You can install Cryptomute via [Composer](http://getcomposer.org) (packagist has [jetlee0797/cryptomute](https://packagist.org/packages/jetlee0797/cryptomute) package). In your `composer.json` file use:
 
 ``` json
 {
     "require": {
-        "loostro/cryptomute": "^1.0"
+        "jetlee0797/cryptomute": "^1.0"
     }
 }
 ```
