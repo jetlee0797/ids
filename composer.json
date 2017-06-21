@@ -1,13 +1,13 @@
 {
-    "name": "loostro/cryptomute",
+    "name": "jetlee0797/cryptomute",
     "description": "Encrypt numeric data (binary, decimal, hex) preserving it's format (eg. 16-digits card number to 16-digits encrypted number).",
     "keywords": ["cryptomute", "permute", "encode", "decode", "encrypt", "decrypt", "obfuscate", "format-preserving"],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Piotr Gołębiewski",
-            "email": "cryptomute@gmail.pl"
+            "name": "Jet Li",
+            "email": "jet.li@bs.cn"
         }
     ],
     "require": {
