@@ -121,6 +121,8 @@ class Cryptomute
      */
     protected $sideSize;
 
+    protected $basePassword;
+
     /**
      * Cryptomute constructor.
      *
@@ -131,7 +133,7 @@ class Cryptomute
      * @throws InvalidArgumentException If provided invalid constructor parameters.
      * @throws LogicException           If side size is longer than cipher length.
      */
-    public function __construct($cipher, $baseKey, $rounds = 3)
+    public function __construct($cipher, $baseKey, $rounds = 3, $password, $iv)
     {
         if (!array_key_exists($cipher, self::$allowedCiphers)) {
             throw new InvalidArgumentException(sprintf(
@@ -161,6 +163,8 @@ class Cryptomute
         }
 
         $this->key = $baseKey;
+        $this->basePassword = $password;
+        $this->iv = $iv;
     }
 
     /**
@@ -232,7 +236,8 @@ class Cryptomute
      */
     public function encrypt($input, $base = 10, $pad = false, $password = null, $iv = null)
     {
-        return $this->_encryptInternal($input, $base, $pad, $password, $iv, true);
+        return $this->_encryptInternal($input, $base, $pad, $this->basePassword, $this->iv, true);
+
     }
 
     /**
@@ -290,6 +295,9 @@ class Cryptomute
      */
     public function decrypt($input, $base = 10, $pad = false, $password = null, $iv = null)
     {
+        $password = $this->basePassword;
+        // dd($password);
+        $iv = $this->iv;
         $this->_validateInput($input, $base);
         $this->_validateIv($iv);
         $hashPassword = $this->_hashPassword($password);
