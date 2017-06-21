@@ -25,7 +25,7 @@ class Cryptomute
 
     const DEFAULT_MIN_VALUE = '0';
 
-    const DEFAULT_MAX_VALUE = '99999999999';
+    const DEFAULT_MAX_VALUE = '999999999999';
 
     /**
      * @var array
